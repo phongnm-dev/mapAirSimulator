@@ -17,9 +17,9 @@ const attributions =
 const speed = 0.5;
 
 export default class OLMap {
-  constructor() {
+  constructor(target) {
     this.map = new Map({
-      target: document.getElementById('map'),
+      target: document.getElementById(target),
       view: new View({
         center: [11879900, 1205800],
         zoom: 15,
@@ -60,7 +60,7 @@ export default class OLMap {
     this.runnerMoveFunctions  = [];
     this.runnerAnimating = [];
     this.infoBox = new InfoBox();
-    document.getElementById('map').appendChild(this.infoBox.render());
+    document.getElementById(target).appendChild(this.infoBox.render());
   }
 
   addRoute({features, color}) {
@@ -148,7 +148,6 @@ export default class OLMap {
     })
 
     this.map.render();
-    console.log('run')
     if (this.routeAnimating.length === 0 && this.runnerAnimating.length === 0) {
       this.stopAnimation();
       this.onFinish && this.onFinish();

@@ -5,8 +5,9 @@ import route3 from './data/route3.json';
 import route4 from './data/route4.json';
 
 import GeoJSON from 'ol/format/GeoJSON';
+(function() {
 
-const map = new OLMap();
+const map = new OLMap('map');
 const startButton = document.createElement('button')
 startButton.classList.add('button', 'button1')
 startButton.innerText = 'Start'
@@ -39,7 +40,7 @@ map.addRunner({features: features4, name: 'Algorithm 3', kmRoute: 3.9})
 map.onStop = () => {
   startButton.classList.remove('button3')
   startButton.classList.add('button1')
-  startButton.innerText = 'Start'
+  startButton.innerText = 'Start';
 }
 map.onFinish = () => {
   $('#exampleModal').modal('show')
@@ -55,3 +56,5 @@ btns.forEach((btn) => {
     map.reColor();
   }
 })
+
+})()

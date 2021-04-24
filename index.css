@@ -7,10 +7,14 @@
   border: 1px solid #cccccc;
   bottom: 12px;
   left: -50px;
-  min-width: 140px;
+  min-width: 150px;
 }
 .ol-popup p {
   margin: 5px 0;
+}
+.actions-btn2 {
+  display: flex;
+  justify-content: space-between;
 }
 .ol-popup:after, .ol-popup:before {
   top: 100%;
@@ -52,7 +56,7 @@
   /* padding: 5px 15px 15px; */
   box-sizing: border-box;
   border-right: 1px solid #cccccc;
-  top: 0;
+  top: 15px;
   min-width: 350px;
 }
 .ol-infoBoxContent {
@@ -85,8 +89,8 @@
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #cccccc;
-  bottom: 12px;
-  left: 10px;
+  bottom: 30px;
+  left: 28px;
   min-width: 140px;
 }
 
@@ -141,4 +145,23 @@
 .button3:hover {
   background-color: #f44336;
   color: white;
+}
+
+.nav-link.active {
+  color: green !important;
+  border-color: green !important;
+  border-bottom: none;
+}
+
+.modal-backdrop {
+  display: none !important;
+}
+
+.modal {
+  position: absolute;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+}
+.modal.show {
+  display: flex !important;
 }

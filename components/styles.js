@@ -67,7 +67,7 @@ export default {
     }
     return new Style({
       image: new RegularShape({
-        radius: 800/resolution,
+        radius: 500/resolution,
         angle: Math.PI / 4,
         points: 4,
         fill: new Fill({
@@ -109,7 +109,7 @@ export default {
       const style = new Style({
         image: bikeOlIcon,
       })
-      const scale = 0.3/resolution < 0.04 ? 0.04 : 0.3/resolution
+      const scale = 0.3/resolution < 0.1 ? 0.1 : 0.3/resolution
       style.getImage().setScale(scale)
       return style
     },
