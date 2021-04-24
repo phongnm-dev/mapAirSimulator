@@ -74,13 +74,18 @@ export default class Runner {
     cancelBtn.innerText = 'cancel';
     cancelBtn.classList.add('btn-warning')
     cancelBtn.onclick = () => {
-      this.resume();
+      this.stops.forEach((s) => {
+        if (this.distance >= s.position && !s.done) {
+          s.done = true;
+          this.resume();
+        }
+      })
     }
 
     const wrapper = document.createElement('div');
     wrapper.classList.add('actions-btn2')
-    wrapper.appendChild(okBtn);
     wrapper.appendChild(cancelBtn);
+    wrapper.appendChild(okBtn);
     this.popupContent.appendChild(wrapper);
   }
 
